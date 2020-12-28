@@ -1,0 +1,20 @@
+p=input("enter phone number")
+l=len(p)
+i=0
+c=0
+if l!=10:
+    print("invalid1")
+else:
+    while i<l:
+        try:
+            s=int(p[i])
+        except:
+            print("invalid 2")
+            c=1
+            break
+        i+=1
+    if (c==0):
+         print("valid phone number")
+#to check whether a phone number entered is valid or not
+
+
