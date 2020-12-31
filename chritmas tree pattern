@@ -1,0 +1,19 @@
+def vishu(n):
+    a=n-1
+    for i in range(1,n+1):
+        for j in range(a,0,-1):
+                print(" ",end="")
+        if i==1:
+            for j in range(1,i+1):
+                print("☆",end="")
+        else:
+            for j in range(1,i+1):
+                print("♤"*2,end="")
+        a-=1
+        print()
+    print("           ||             ")
+    print("           ||             ")
+    print("           ||             ")
+    print("           ||             ")
+    print("♡","HAPPY NEW YEAR ","♡")
+vishu(15)
