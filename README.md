@@ -1,2 +1,2 @@
 # staircase
-hackerrank staircase progam solving
+hackerrank staircase problem solving
