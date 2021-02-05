@@ -41,5 +41,6 @@ for i in range(25):
   m.backward(5)
   m.right(15)
 m.end_fill()
+m.hideturtle()
 turtle.done()
 print("PROUD TO BE INDIAN")
