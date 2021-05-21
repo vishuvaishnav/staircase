@@ -9,4 +9,3 @@ def vishu(n):
     [print("           |  |             ") for i in range(4)]
     print("♡","HAPPY NEW YEAR ","♡")
 vishu(15)
-
