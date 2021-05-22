@@ -25,3 +25,4 @@ def phone_number_finder(s):
         print(i)
 s=input("enter your sentence")
 phone_number_finder(s)
+#NOTE: always write phone number in this format:123-456-7890 to get your phone number found in the paragraph.
