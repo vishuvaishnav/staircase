@@ -38,7 +38,7 @@ m.right(90)
 m.forward(190)
 m.end_fill()
 m.backward(95)
-m.fillcolor("blue")
+m.fillcolor("navy")
 m.begin_fill()
 for i in range(25):
   m.backward(5)
