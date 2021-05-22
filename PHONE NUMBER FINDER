@@ -1,0 +1,27 @@
+def phone_number_finder(s):
+    m=[]
+    def phone_number_validator(p):
+        l=len(p)
+        i=0
+        if l!=12 :
+            return False
+        else:
+            while i<l:
+                if p[i]!="-":
+                    try:
+                        s=int(p[i])
+                    except:
+                        return False
+                i+=1
+            if (p[3]==p[7]=="-"):
+                return True
+    for i in range(len(s)):
+        c=s[i:(i+12)]
+        if c not in m:
+            if phone_number_validator(c)==True :
+                m.append(c)
+    print(len(m),"distinct phone numbers found:")
+    for i in m:
+        print(i)
+s=input("enter your sentence")
+phone_number_finder(s)
