@@ -17,7 +17,7 @@ def phone_number_finder(s):
                 return True
     c=s.split()
     for i in c:
-        if len(i)==13:
+        if len(i)>=13:
                     if i[12]=="." :
                         i=i[:12]
                         if i not in m:
