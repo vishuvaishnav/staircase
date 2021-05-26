@@ -15,18 +15,11 @@ def phone_number_finder(s):
                 i+=1
             if (p[3]==p[7]=="-"):
                 return True
-    c=s.split()
-    for i in c:
-        if len(i)>=13:
-                    if i[12]=="." :
-                        i=i[:12]
-                        if i not in m:
-                            if phone_number_validator(i)==True :
-                                m.append(i)
-        else:
-            if i not in m:
-                if phone_number_validator(i)==True :
-                    m.append(i)
+    for i in s:
+        c=[i:(i+12)]
+        if c not in l:
+            if phone_number_validator(c)==True:
+                l.append(c)
     print(len(m),"distinct phone numbers found:")
     for i in m:
         print(i)
