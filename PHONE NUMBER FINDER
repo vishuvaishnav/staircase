@@ -20,6 +20,7 @@ def phone_number_finder(s):
         if c not in m:
             if phone_number_validator(c)==True:
                 m.append(c)
+                i=i+11
     print(len(m),"distinct phone numbers found:")
     for i in m:
         print(i)
