@@ -1,11 +1,7 @@
 def vishu(n):
-    for i in range(1,n+1):
-        print(" "*(n-i),end="")
-        if i==1:
-            print("☆",end="")
-        else:
-            print("♤"*(2*i))
-        print()
-    [print("           |  |             ") for i in range(4)]
+    print(" "*n+"☆")
+    [print(" "*(n-i)+"♤"*(i*2),end="") for i in range(1,n+1)]
+    [print(" "*(n),"|  |"," "*(n)) for i in range(4)]
     print("♡","HAPPY NEW YEAR ","♡")
-vishu(15)
+n=int(input("enter"))
+vishu(n)
