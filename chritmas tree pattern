@@ -2,6 +2,6 @@ def vishu(n):
     print(" "*n+"☆")
     [print(" "*(n-i)+"♤"*(i*2)) for i in range(1,n+1)]
     [print(" "*(n),"|  |"," "*(n)) for i in range(4)]
-    print("♡","HAPPY NEW YEAR ","♡")
+    print("♡","christmas tree","♡")
 n=int(input("enter"))
 vishu(n)
