@@ -11,3 +11,5 @@ def maxSubarraySum(arr,num):
         maxsum=max(maxsum,tempsum)
     
     return maxsum  
+
+print(maxSubarraySum([2,1,2,5,8,6],3))
