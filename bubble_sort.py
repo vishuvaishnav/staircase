@@ -1,5 +1,4 @@
 #optimized bubble sort
-
 arr = list(map(int,input("Enter : ").split()))
 
 for i in range(len(arr),-1,-1):
