@@ -18,4 +18,13 @@ def merge(arr1,arr2):
     
     return result
     
-print(merge([1,2,3,4,5,7,12,100],[6,9,27,221]))
+def mergeSort(arr):
+    if len(arr)<=1:
+        return arr
+    mid = len(arr)//2
+    left = mergeSort(arr[:mid])
+    right = mergeSort(arr[mid:])
+    
+    return merge(left,right)
+    
+print( mergeSort([10,24,76,73,72,1,9]) )
