@@ -1,0 +1,78 @@
+import java.util.ArrayList;
+import java.util.List;
+
+class Book {
+    private String title;
+    private String author;
+    private int publishYear;
+
+    public Book(String title, String author, int publishYear) {
+        this.title = title;
+        this.author = author;
+        this.publishYear = publishYear;
+    }
+
+    @Override
+    public String toString() {
+        return title + " by " + author + " (" + publishYear + ")";
+    }
+}
+
+class Library {
+    private List<Book> books = new ArrayList<>();
+
+    public void addBook(Book book) {
+        books.add(book);
+        System.out.println("Added: " + book);
+    }
+
+    public void removeBook(Book book) {
+        if (books.remove(book)) {
+            System.out.println("Removed: " + book);
+        } else {
+            System.out.println("Not found: " + book);
+        }
+    }
+
+    public void displayBooks() {
+        if (books.isEmpty()) {
+            System.out.println("The library is empty.");
+        } else {
+            System.out.println("Books in the library:");
+            books.forEach(System.out::println);
+        }
+    }
+}
+
+class LibraryDemo {
+    public static void main(String[] args) {
+        Book book1 = new Book("The Great Gatsby", "F. Scott Fitzgerald", 1925);
+        Book book2 = new Book("To Kill a Mockingbird", "Harper Lee", 1960);
+        Book book3 = new Book("1984", "George Orwell", 1949);
+
+        Library library = new Library();
+        library.addBook(book1);
+        library.addBook(book2);
+        library.addBook(book3);
+
+        library.displayBooks();
+
+        library.removeBook(book2);
+
+        library.displayBooks();
+    }
+}
+
+Output:
+
+Added: The Great Gatsby by F. Scott Fitzgerald (1925)
+Added: To Kill a Mockingbird by Harper Lee (1960)
+Added: 1984 by George Orwell (1949)
+Books in the library:
+The Great Gatsby by F. Scott Fitzgerald (1925)
+To Kill a Mockingbird by Harper Lee (1960)
+1984 by George Orwell (1949)
+Removed: To Kill a Mockingbird by Harper Lee (1960)
+Books in the library:
+The Great Gatsby by F. Scott Fitzgerald (1925)
+1984 by George Orwell (1949)
