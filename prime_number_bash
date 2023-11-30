@@ -1,0 +1,23 @@
+#!/bin/bash
+
+is_prime() {
+    num=$1
+    if [ $num -lt 2 ]; then
+        return 1  # Not prime
+    fi
+
+    for ((i=2; i*i<=num; i++)); do
+        if [ $((num % i)) -eq 0 ]; then
+            return 1  # Not prime
+        fi
+    done
+
+    return 0  # Prime
+}
+
+echo "Prime numbers from 1 to 100:"
+for ((i=2; i<=100; i++)); do
+    if is_prime $i; then
+        echo $i
+    fi
+done
