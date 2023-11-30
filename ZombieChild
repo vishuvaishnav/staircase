@@ -1,0 +1,43 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <sys/types.h>
+#include <sys/wait.h>
+
+int main() {
+    pid_t child_pid = fork();
+
+    if (child_pid == -1) {
+        perror("fork");
+        exit(EXIT_FAILURE);
+    }
+
+    if (child_pid > 0) {
+        // This is the parent process
+        printf("Parent process (PID=%d) created a child process (PID=%d)\n", getpid(), child_pid);
+        
+        // Sleep for a while to allow child to become a zombie
+        sleep(2);
+
+        // The parent will continue to execute and can adopt the zombie process
+        printf("Parent process exiting\n");
+    } else {
+        // This is the child process
+        printf("Child process (PID=%d) is running\n", getpid());
+        
+        // Child process exits immediately, becoming a zombie
+        exit(EXIT_SUCCESS);
+    }
+
+    // Ensure the child process becomes a zombie before the parent exits
+    // Note: In a real-world scenario, you would want to handle this more gracefully
+    sleep(5);
+
+    return 0;
+}
+
+Output :-
+
+Parent process (PID=1234) created a child process (PID=1235)
+Child process (PID=1235) is running
+Parent process exiting
