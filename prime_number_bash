@@ -1,24 +1,23 @@
 #!/bin/bash
 
+# Function to check if a number is prime
 is_prime() {
     num=$1
     if [ $num -lt 2 ]; then
-        return 1  # Not prime
+        return 1
     fi
-
-    for ((i=2; i*i<=num; i++)); do
+    for ((i = 2; i <= $num / 2; i++)); do
         if [ $((num % i)) -eq 0 ]; then
-            return 1  # Not prime
+            return 1
         fi
     done
-
-    return 0  # Prime
+    return 0
 }
 
-echo "Prime numbers from 1 to 100:"
-for ((i=2; i<=100; i++)); do
-    if is_prime $i; then
-        echo $i
+# Loop through numbers from 1 to 100 and display primes
+for ((num = 2; num <= 100; num++)); do
+    if is_prime "$num"; then
+        echo "$num"
     fi
 done
 
